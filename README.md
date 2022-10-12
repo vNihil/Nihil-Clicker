@@ -1,5 +1,5 @@
 # Nihil autoclicker
-Autoclicker de minecraft para click derecho e izquierdo, de momento compatible solo con versiones vanilla 1.8.9 - 1.18.2
+Autoclicker de minecraft para click derecho e izquierdo, de momento solo es compatible solo con versiones vanilla 1.8.9 - 1.18.2
 
 Puedes compilarlo desde el sourcecode o descargarlo aqui https://github.com/vNihil/Nihil-Clicker/releases
 
