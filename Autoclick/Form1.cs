@@ -76,6 +76,8 @@ namespace Autoclick
             {
                 if (GetForegroundWindow() == FindWindow(null, pr[0].MainWindowTitle))
                 {
+                    Console.WriteLine(GetForegroundWindow());
+                    Console.WriteLine(pr[0].MainWindowTitle);
                     if (MouseButtons == MouseButtons.Left && cIzquierdo)
                     {
                         SendMessage(GetForegroundWindow(), 0x201, 0, 0);
@@ -89,6 +91,8 @@ namespace Autoclick
                         SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
                     }
                 }
+               
+
             }
             else if (ocultar)
             {
@@ -96,8 +100,9 @@ namespace Autoclick
             }
             else
             {
-                MessageBox.Show("Minecraft cerrado");
-                Application.Exit();
+
+               Click.Stop();
+                MessageBox.Show("Minecraft no vanilla o minecraft ha sido cerrado");
             }
         }
 
