@@ -1,0 +1,11 @@
+C:\Users\lemus\source\repos\Autoclick\Autoclick\bin\Release\Autoclick.exe.config
+C:\Users\lemus\source\repos\Autoclick\Autoclick\bin\Release\Autoclick.exe
+C:\Users\lemus\source\repos\Autoclick\Autoclick\bin\Release\Autoclick.pdb
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Release\Autoclick.csproj.AssemblyReference.cache
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Release\Autoclick.csproj.SuggestedBindingRedirects.cache
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Release\Autoclick.Form1.resources
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Release\Autoclick.Properties.Resources.resources
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Release\Autoclick.csproj.GenerateResource.cache
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Release\Autoclick.csproj.CoreCompileInputs.cache
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Release\Autoclick.exe
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Release\Autoclick.pdb
