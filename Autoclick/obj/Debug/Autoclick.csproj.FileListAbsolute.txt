@@ -9,3 +9,6 @@ C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Debug\Autoclick.csproj.Gener
 C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Debug\Autoclick.csproj.CoreCompileInputs.cache
 C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Debug\Autoclick.exe
 C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Debug\Autoclick.pdb
+C:\Users\lemus\source\repos\Autoclick\Autoclick\bin\Debug\GlobalHotKey.dll
+C:\Users\lemus\source\repos\Autoclick\Autoclick\obj\Debug\Autoclick.csproj.CopyComplete
+C:\Users\lemus\source\repos\Autoclick\Autoclick\bin\Debug\Gma.System.MouseKeyHook.dll

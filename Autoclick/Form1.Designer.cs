@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Click = new System.Windows.Forms.Timer(this.components);
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -59,7 +60,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(155, 56);
+            this.button1.Location = new System.Drawing.Point(90, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -81,17 +82,30 @@
             this.checkBox3.Text = "Ocultar al iniciar";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(204, 56);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Toggle keybind";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(416, 91);
+            this.ClientSize = new System.Drawing.Size(377, 114);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "NihilClicker";
             this.ResumeLayout(false);
@@ -106,6 +120,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer Click;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button button2;
     }
 }
 
