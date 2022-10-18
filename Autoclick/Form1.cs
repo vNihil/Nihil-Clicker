@@ -5,14 +5,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Management;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
-
+using Microsoft.Win32;
 namespace Autoclick
 {
 
@@ -29,18 +31,18 @@ namespace Autoclick
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
 
-        
 
 
 
-        public Boolean cDerecho,cIzquierdo, ocultar, registrarBind, toggle = true;
+
+        public Boolean cDerecho, cIzquierdo, ocultar, registrarBind, toggle = true;
         public Process[] pr;
         private static Keys bind;
         private Keys r1;
         private KeyboardHook kh = new KeyboardHook(true);
 
         public Form1()
-        {  
+        {
             InitializeComponent();
             kh.KeyDown += Kh_KeyDown;
 
@@ -48,16 +50,18 @@ namespace Autoclick
         private static void Kh_KeyDown(Keys key, bool Shift, bool Ctrl, bool Alt)
         {
             bind = key;
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             if (checkBox1.Checked)
             {
                 cDerecho = true;
             }
-            
+
             if (checkBox2.Checked)
             {
                 cIzquierdo = true;
@@ -66,7 +70,7 @@ namespace Autoclick
             {
                 ocultar = true;
             }
-            if(checkBox1.Checked && checkBox2.Checked)
+            if (checkBox1.Checked && checkBox2.Checked)
             {
                 cIzquierdo = true;
                 cDerecho = true;
@@ -86,7 +90,7 @@ namespace Autoclick
                 MessageBox.Show("Debes abrir minecraft para inyectar el autoclicker");
                 return;
             }
-
+            button1.Text = "Ejecutado";
             if (ocultar)
             {
                 this.Hide();
@@ -96,9 +100,24 @@ namespace Autoclick
             {
                 bind = Keys.F22;
             }
-            
+
 
         }
+       
+
+        
+
+       
+
+        private void Form1_Load(object sender, EventArgs e)
+
+        {
+           
+
+
+        }
+        
+        
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -108,58 +127,63 @@ namespace Autoclick
                 button2.Text = r1.ToString();
                 registrarBind = false;
             }
-            
+
         }
 
-        
+
 
         private void button2_Click(object sender, EventArgs e)
         {
             registrarBind = true;
             button2.Text = "Presiona una tecla...";
         }
-        
+
         private void Click_Tick(object sender, EventArgs e)
         {
-            if (GetParent(pr[0]).ToString().Equals("System.Diagnostics.Process (MinecraftLauncher)"))
+
+
+            if (GetForegroundWindow() == FindWindow(null, pr[0].MainWindowTitle))
             {
-                if (GetForegroundWindow() == FindWindow(null, pr[0].MainWindowTitle))
+                if (toggle)
                 {
-                    if (toggle)
+
+                    if (MouseButtons == MouseButtons.Left && cIzquierdo)
                     {
-
-                        if (MouseButtons == MouseButtons.Left && cIzquierdo)
-                        {
-                            SendMessage(GetForegroundWindow(), 0x201, 0, 0);
-                            Task.Delay(40).Wait();
-                            SendMessage(GetForegroundWindow(), 0x202, 0, 0);
-                        }
-                       
-                        if (MouseButtons == MouseButtons.Right && cDerecho)
-                        {
-                            SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
-                            SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
-                            SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
-                            SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
-
-
-                        }
+                        SendMessage(GetForegroundWindow(), 0x201, 0, 0);
+                        Task.Delay(40).Wait();
+                        SendMessage(GetForegroundWindow(), 0x202, 0, 0);
                     }
 
-                    if (bind.Equals(r1) && toggle){
-                        bind = Keys.F24;
-                        toggle = false;
-                    }
-                    if(bind.Equals(r1) && toggle == false)
+                    if (MouseButtons == MouseButtons.Right && cDerecho)
                     {
-                        bind = Keys.F24;
-                        toggle = true;
+                        SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
+                        SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
+                        SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
+                        SendMessage(GetForegroundWindow(), 0x0204, 0, 0);
+
+
                     }
                 }
-               
 
+                if (bind.Equals(r1) && toggle)
+                {
+                    bind = Keys.F24;
+                    toggle = false;
+                }
+                if (bind.Equals(r1) && toggle == false)
+                {
+                    bind = Keys.F24;
+                    toggle = true;
+                }
             }
-           
+
+            pr = Process.GetProcessesByName("javaw");
+            if (pr.Length < 0)
+            {
+                Application.Exit();
+            }
+
+
         }
 
         public static Process GetParent(Process process)
@@ -185,3 +209,4 @@ namespace Autoclick
         }
     }
 }
+
