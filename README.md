@@ -3,5 +3,5 @@ Autoclicker de minecraft para click derecho e izquierdo, de momento solo es comp
 
 Puedes compilarlo desde el sourcecode o descargarlo aqui https://github.com/vNihil/Nihil-Clicker/releases
 
-![image](https://user-images.githubusercontent.com/52175067/195255278-5e71009d-b301-4727-bca2-28c8295e3f89.png)
+![image](https://user-images.githubusercontent.com/52175067/195747018-60bc88f4-b3b3-4c37-878b-497c8ecca36d.png)
 
